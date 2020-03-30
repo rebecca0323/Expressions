@@ -50,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/small_log_but"
+        android:onClick="LoginUser"
         android:layout_alignTop="@id/log_password"
         android:layout_marginTop="120dp"
         android:layout_marginLeft="50dp"/>
@@ -60,6 +61,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/sign_up_text"
         android:layout_centerHorizontal="true"
+        android:onClick="registerUser"
         android:layout_alignTop="@id/imageView7"
         android:layout_marginTop="200dp"/>
 
