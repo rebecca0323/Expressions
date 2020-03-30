@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "527221370203",
+    "firebase_url": "https://livewell2020-10b52.firebaseio.com",
+    "project_id": "livewell2020-10b52",
+    "storage_bucket": "livewell2020-10b52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527221370203:android:04da6e75c8b33ed3acfe7e",
+        "android_client_info": {
+          "package_name": "com.example.livewell2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527221370203-ovke0cu46f9icsl9m3piu5nj0bv84u3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhmPu9zwQJEx-VKxNMDLSc-Um9qa4b_yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527221370203-ovke0cu46f9icsl9m3piu5nj0bv84u3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
