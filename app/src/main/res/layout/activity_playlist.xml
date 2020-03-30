@@ -7,15 +7,8 @@
     tools:context=".Playlist">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/business_nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_bar" />
 </RelativeLayout>

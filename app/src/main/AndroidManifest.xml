@@ -8,16 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Playlist"></activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".Splash">
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <activity android:name=".Playlist">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
+        <activity android:name=".Splash">
         </activity>
     </application>
 

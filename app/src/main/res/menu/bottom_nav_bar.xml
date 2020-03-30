@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/student_nav_profile"
+        android:id="@+id/settings"
         android:icon="@drawable/settings"
         android:title="Settings" />
 
     <item
-        android:id="@+id/student_nav_home"
+        android:id="@+id/music"
         android:icon="@drawable/music"
         android:title="Music" />
 
     <item
-        android:id="@+id/student_nav_leaderboard"
+        android:id="@+id/game"
         android:icon="@drawable/face_nav"
         android:title="Game" />
 </menu>
