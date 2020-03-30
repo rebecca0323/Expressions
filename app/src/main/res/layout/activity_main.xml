@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/splash"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="200dp"
+        android:layout_marginTop="300dp"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/GalaxyS10e"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:srcCompat="@drawable/splash_bottom"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/to_login_page"
+        android:layout_alignTop="@id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="50dp"/>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/sign_up_text"
+        android:layout_alignTop="@id/imageView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="75dp"/>
+
+</RelativeLayout>
