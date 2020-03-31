@@ -1,10 +1,12 @@
 package com.example.livewell2020;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,18 +18,31 @@ public class Song extends AppCompatActivity {
     private SeekBar seekbar;
     private Runnable runnable;
     private Handler handler;
+    private TextView songname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
 
+        songname = findViewById(R.id.song_name);
         seekbar = findViewById(R.id.song_progress);
         handler = new Handler();
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String name = bundle.getString("Name");
+
+        songname.setText(name);
 
         mediaPlayer = new MediaPlayer();
         try{
-            mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/bensound-relaxing.mp3?alt=media&token=54a3197f-8695-4e96-8d57-57a121659e42");
+            if(name.equals("Zen")){
+                mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/bensound-relaxing.mp3?alt=media&token=54a3197f-8695-4e96-8d57-57a121659e42");
+            }
+            else{
+                mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/meditation.mp3?alt=media&token=f17388bc-f2f9-40c5-8883-65089ba52080");
+            }
+            //mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/bensound-relaxing.mp3?alt=media&token=54a3197f-8695-4e96-8d57-57a121659e42");
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
@@ -43,18 +58,20 @@ public class Song extends AppCompatActivity {
     }
 
     private void changeSeekbar() {
-        seekbar.setProgress(mediaPlayer.getCurrentPosition());
+        if(mediaPlayer != null){
+            seekbar.setProgress(mediaPlayer.getCurrentPosition());
 
-        if(mediaPlayer.isPlaying()){
-            runnable = new Runnable(){
+            if(mediaPlayer.isPlaying()){
+                runnable = new Runnable(){
 
-                @Override
-                public void run() {
-                    changeSeekbar();
-                }
-            };
+                    @Override
+                    public void run() {
+                        changeSeekbar();
+                    }
+                };
 
-            handler.postDelayed(runnable, 1000);
+                handler.postDelayed(runnable, 1000);
+            }
         }
     }
 
