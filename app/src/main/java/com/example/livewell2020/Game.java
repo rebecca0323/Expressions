@@ -7,18 +7,23 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.camerakit.CameraKitView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.jetbrains.annotations.NotNull;
 
 public class Game extends AppCompatActivity {
 
-    private BottomNavigationView bnav;
+    private CameraKitView cameraKitView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        bnav = findViewById(R.id.bottom_nav_bar);
+        cameraKitView = findViewById(R.id.camera);
+
+        BottomNavigationView bnav = findViewById(R.id.bottom_nav_bar);
         bnav.setSelectedItemId(R.id.game);
 
         bnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,5 +46,38 @@ public class Game extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        cameraKitView.setRotationX(90);
+        cameraKitView.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cameraKitView.setRotationX(90);
+        cameraKitView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        cameraKitView.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        cameraKitView.onStop();
+        super.onStop();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        cameraKitView.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
