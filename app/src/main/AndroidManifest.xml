@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <activity android:name=".Song"></activity>
         <activity android:name=".Playlist">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +19,7 @@
         </activity>
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".Splash">
-        </activity>
+        <activity android:name=".Splash"></activity>
     </application>
 
 </manifest>
