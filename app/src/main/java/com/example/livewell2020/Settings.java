@@ -32,7 +32,7 @@ public class Settings extends AppCompatActivity {
                         return true;
                     case R.id.game:
                         startActivity(new Intent(getApplicationContext(),
-                                Game.class));
+                                Instructions.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
