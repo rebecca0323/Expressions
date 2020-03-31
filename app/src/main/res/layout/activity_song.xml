@@ -53,4 +53,14 @@
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="40dp"
         android:thumbTint="#000"/>
+
+    <ImageView
+        android:id="@+id/pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pause"
+        android:layout_alignTop="@id/song_progress"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="pause"/>
 </RelativeLayout>

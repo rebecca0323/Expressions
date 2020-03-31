@@ -11,15 +11,16 @@
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity android:name=".Song"></activity>
         <activity android:name=".Playlist">
+        </activity>
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".Splash"></activity>
     </application>
 
 </manifest>

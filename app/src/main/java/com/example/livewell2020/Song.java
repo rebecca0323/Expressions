@@ -2,7 +2,9 @@ package com.example.livewell2020;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.os.Handler;
+import android.view.View;
+import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,11 +13,17 @@ import java.io.IOException;
 public class Song extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
+    private SeekBar seekbar;
+    private Runnable runnable;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
+
+        seekbar = findViewById(R.id.song_progress);
+        handler = new Handler();
 
         mediaPlayer = new MediaPlayer();
         try{
@@ -23,13 +31,51 @@ public class Song extends AppCompatActivity {
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
+                    seekbar.setMax(mp.getDuration());
                     mp.start();
-                    Toast.makeText(Song.this, "Song is playing", Toast.LENGTH_SHORT).show();
+                    changeSeekbar();
                 }
             });
             mediaPlayer.prepareAsync();
         }catch (IOException e){
             e.printStackTrace();
+        }
+    }
+
+    private void changeSeekbar() {
+        seekbar.setProgress(mediaPlayer.getCurrentPosition());
+
+        if(mediaPlayer.isPlaying()){
+            runnable = new Runnable(){
+
+                @Override
+                public void run() {
+                    changeSeekbar();
+                }
+            };
+
+            handler.postDelayed(runnable, 1000);
+        }
+    }
+
+    public void pause(View view){
+        if(!mediaPlayer.isPlaying()){
+            mediaPlayer.start();
+            changeSeekbar();
+        }
+        else{
+            mediaPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if(mediaPlayer != null){
+            mediaPlayer.reset();
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 }
