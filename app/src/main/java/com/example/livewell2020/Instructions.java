@@ -55,7 +55,7 @@ public class Instructions extends AppCompatActivity {
     };
 
     public void playGame(View view){
-        Intent intent = new Intent(this, Game3.class);
+        Intent intent = new Intent(this, Game.class);
         startActivity(intent);
     }
 }
