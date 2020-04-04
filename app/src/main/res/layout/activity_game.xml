@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Game">
 
-    <com.camerakit.CameraKitView
+    <!--<com.camerakit.CameraKitView
         android:id="@+id/camera"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:adjustViewBounds="true"
         android:keepScreenOn="true"
         app:camera_flash="auto"
-        app:camera_facing="front"
+        app:camera_facing="back"
         app:camera_focus="continuous"
-        app:camera_permissions="camera" />
+        app:camera_permissions="camera" />-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_bar"
@@ -26,5 +26,10 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"/>
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp" />
 
 </RelativeLayout>

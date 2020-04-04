@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.livewell2020">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <library tools:node="removeAll" />
     <application
         android:allowBackup="true"
@@ -12,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity android:name=".Instructions"></activity>
-        <activity android:name=".Game" >
+        <activity android:name=".Game"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
