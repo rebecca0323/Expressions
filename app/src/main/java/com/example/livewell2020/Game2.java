@@ -1,19 +1,10 @@
 package com.example.livewell2020;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.camerakit.CameraKitView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.annotations.NotNull;
 
 public class Game2 extends AppCompatActivity{
 
-    private CameraKitView cameraKitView;
+    /*private CameraKitView cameraKitView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,5 +68,5 @@ public class Game2 extends AppCompatActivity{
     public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         cameraKitView.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
+    }*/
 }
