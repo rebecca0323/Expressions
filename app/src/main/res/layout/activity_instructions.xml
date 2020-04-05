@@ -10,7 +10,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slider"
         android:layout_width="match_parent"
-        android:layout_height="600dp" />
+        android:layout_height="500dp" />
 
     <ImageView
         android:id="@+id/finish"

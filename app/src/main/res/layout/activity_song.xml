@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignTop="@id/imageView14"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="355dp"
         android:textSize="20dp"
         android:textColor="#000"
         android:textStyle="bold"
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/pause"
         android:layout_alignTop="@id/song_progress"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:onClick="pause"/>
 </RelativeLayout>
