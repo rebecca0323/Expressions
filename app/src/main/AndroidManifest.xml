@@ -15,11 +15,6 @@
         <activity android:name=".Camera">
         </activity>
         <activity android:name=".Game" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Instructions" />
         <activity android:name=".Settings" />
@@ -27,7 +22,13 @@
         <activity android:name=".Playlist"></activity>
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".Splash" />
+        <activity android:name=".Splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

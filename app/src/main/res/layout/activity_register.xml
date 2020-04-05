@@ -65,7 +65,7 @@
         android:layout_centerHorizontal="true"
         android:onClick="AlreadyHasAccount"
         android:layout_alignTop="@id/imageView7"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="100dp"/>
 
     <ProgressBar
         android:id="@+id/reg_progressbar"

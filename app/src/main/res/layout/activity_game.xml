@@ -27,10 +27,4 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"/>
 
-    <SurfaceView
-        android:id="@+id/surfaceView"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:visibility="invisible"/>
-
 </RelativeLayout>

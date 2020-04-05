@@ -66,7 +66,7 @@
         android:layout_centerHorizontal="true"
         android:onClick="registerUser"
         android:layout_alignTop="@id/imageView7"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="100dp"/>
 
     <ProgressBar
         android:id="@+id/log_progressbar"
