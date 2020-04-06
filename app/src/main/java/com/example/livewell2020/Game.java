@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +46,7 @@ public class Game extends AppCompatActivity{
             new FaceServiceRestClient(apiEndpoint, subscriptionKey);
 
     private ProgressDialog detectionProgressDialog;
+    private ProgressBar progressBar;
 
     private Bitmap mBitmap;
     private byte[] picture;
@@ -55,6 +57,7 @@ public class Game extends AppCompatActivity{
         setContentView(R.layout.activity_game);
 
         cameraKitView = findViewById(R.id.camera);
+        progressBar = findViewById(R.id.gameProgressBar);
 
         BottomNavigationView bnav = findViewById(R.id.bottom_nav_bar);
         bnav.setSelectedItemId(R.id.game);
@@ -116,6 +119,7 @@ public class Game extends AppCompatActivity{
 
     public void Joy(View view){
         chosenEmotion = "Joy";
+        progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
             @Override
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
@@ -129,11 +133,12 @@ public class Game extends AppCompatActivity{
             public void run() {
                 detectAndFrame(mBitmap);
             }
-        }, 5000);
+        }, 3000);
     }
 
     public void Surprise(View view){
         chosenEmotion = "Surprise";
+        progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
             @Override
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
@@ -147,11 +152,12 @@ public class Game extends AppCompatActivity{
             public void run() {
                 detectAndFrame(mBitmap);
             }
-        }, 5000);
+        }, 3000);
     }
 
     public void Anger(View view){
         chosenEmotion = "Anger";
+        progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
             @Override
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
@@ -165,11 +171,12 @@ public class Game extends AppCompatActivity{
             public void run() {
                 detectAndFrame(mBitmap);
             }
-        }, 5000);
+        }, 3000);
     }
 
     public void Sadness(View view){
         chosenEmotion = "Sadness";
+        progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
             @Override
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
@@ -183,7 +190,7 @@ public class Game extends AppCompatActivity{
             public void run() {
                 detectAndFrame(mBitmap);
             }
-        }, 5000);
+        }, 3000);
     }
 
     private void detectAndFrame(final Bitmap imageBitmap) {
@@ -191,6 +198,8 @@ public class Game extends AppCompatActivity{
         imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
         ByteArrayInputStream inputStream =
                 new ByteArrayInputStream(outputStream.toByteArray());
+
+        progressBar.setVisibility(View.INVISIBLE);
 
         @SuppressLint("StaticFieldLeak") AsyncTask<InputStream, String, Face[]> detectTask =
                 new AsyncTask<InputStream, String, Face[]>() {
