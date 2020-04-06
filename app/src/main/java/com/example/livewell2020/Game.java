@@ -50,7 +50,6 @@ public class Game extends AppCompatActivity{
     private ProgressBar progressBar;
 
     private Bitmap mBitmap;
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +58,6 @@ public class Game extends AppCompatActivity{
 
         cameraKitView = findViewById(R.id.camera);
         progressBar = findViewById(R.id.gameProgressBar);
-        mAuth = FirebaseAuth.getInstance();
 
         BottomNavigationView bnav = findViewById(R.id.bottom_nav_bar);
         bnav.setSelectedItemId(R.id.game);
@@ -88,7 +86,7 @@ public class Game extends AppCompatActivity{
     }
 
     private void LogOut() {
-        mAuth.getInstance().signOut();
+        FirebaseAuth.getInstance().signOut();
         finish();
         startActivity(new Intent(this, Splash.class));
     }
