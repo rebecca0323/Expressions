@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Playlist extends AppCompatActivity {
 
     private BottomNavigationView bnav;
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,6 @@ public class Playlist extends AppCompatActivity {
 
         bnav = findViewById(R.id.bottom_nav_bar);
         bnav.setSelectedItemId(R.id.music);
-        mAuth = FirebaseAuth.getInstance();
 
         bnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -46,7 +44,7 @@ public class Playlist extends AppCompatActivity {
     }
 
     private void LogOut() {
-        mAuth.getInstance().signOut();
+        FirebaseAuth.getInstance().signOut();
         finish();
         startActivity(new Intent(this, Splash.class));
     }
