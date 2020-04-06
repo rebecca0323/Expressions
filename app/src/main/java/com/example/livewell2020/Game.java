@@ -34,6 +34,7 @@ import java.util.Comparator;
 
 public class Game extends AppCompatActivity{
 
+    private String chosenEmotion;
     private ArrayList<Emotion> emotions = new ArrayList<>();
     private CameraKitView cameraKitView;
     // Add your Face endpoint to your environment variables.
@@ -114,6 +115,7 @@ public class Game extends AppCompatActivity{
     }
 
     public void Joy(View view){
+        chosenEmotion = "Joy";
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
             @Override
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
@@ -195,7 +197,7 @@ public class Game extends AppCompatActivity{
                         if (result == null) return;
 
                         for(Face face: result){
-                            emotions.add(new Emotion(face.faceAttributes.emotion.happiness, "Happiness"));
+                            emotions.add(new Emotion(face.faceAttributes.emotion.happiness, "Joy"));
                             emotions.add(new Emotion(face.faceAttributes.emotion.surprise, "Surprise"));
                             emotions.add(new Emotion(face.faceAttributes.emotion.anger, "Anger"));
                             emotions.add(new Emotion(face.faceAttributes.emotion.sadness, "Sadness"));
@@ -205,6 +207,7 @@ public class Game extends AppCompatActivity{
                         Collections.reverse(emotions);
                         System.out.println(emotions.get(0).getEmotion() + ": " + emotions.get(0).getProbability());
                         imageBitmap.recycle();
+                        checkIfCorrect();
                     }
                 };
 
@@ -227,6 +230,18 @@ public class Game extends AppCompatActivity{
             return Double.compare(o1.getProbability(), o2.getProbability());
         }
     };
+
+    private void checkIfCorrect(){
+        if(chosenEmotion.equals(emotions.get(0).getEmotion())){
+            Intent intent = new Intent(this, Correct.class);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(this, Incorrect.class);
+            intent.putExtra("Answer", emotions.get(0).getEmotion());
+            startActivity(intent);
+        }
+    }
 
 
 }

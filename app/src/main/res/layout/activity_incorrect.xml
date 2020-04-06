@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/incorrect_answer_background"
+    tools:context=".Incorrect">
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        app:srcCompat="@drawable/incorrect_text"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFF"
+        android:layout_below="@id/imageView16"
+        android:text="Replace" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/answer"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/encourage" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView17"
+        android:layout_marginTop="30dp"
+        android:onClick="IncorrectNext"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/white_next" />
+</RelativeLayout>
