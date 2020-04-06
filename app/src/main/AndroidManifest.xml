@@ -25,7 +25,6 @@
         <activity android:name=".Game">
         </activity>
         <activity android:name=".Instructions" />
-        <activity android:name=".Settings" />
         <activity android:name=".Song" />
         <activity android:name=".Playlist" />
         <activity android:name=".Register" />
