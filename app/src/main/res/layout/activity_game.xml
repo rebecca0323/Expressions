@@ -36,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_height="wrap_content"
+            android:onClick="Surprise"
             android:background="@drawable/surprise"/>
     </LinearLayout>
 
@@ -51,11 +52,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="25dp"
+            android:onClick="Anger"
             android:background="@drawable/anger"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_marginLeft="25dp"
+            android:onClick="Sadness"
             android:layout_height="wrap_content"
             android:background="@drawable/sadness"/>
     </LinearLayout>

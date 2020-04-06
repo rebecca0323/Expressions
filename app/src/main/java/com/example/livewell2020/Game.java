@@ -132,6 +132,60 @@ public class Game extends AppCompatActivity{
         }, 5000);
     }
 
+    public void Surprise(View view){
+        chosenEmotion = "Surprise";
+        cameraKitView.captureImage(new CameraKitView.ImageCallback() {
+            @Override
+            public void onImage(CameraKitView cameraKitView, final byte[] photo) {
+                mBitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
+                System.out.println("Saved image");
+                picture = photo;
+            }
+        });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                detectAndFrame(mBitmap);
+            }
+        }, 5000);
+    }
+
+    public void Anger(View view){
+        chosenEmotion = "Anger";
+        cameraKitView.captureImage(new CameraKitView.ImageCallback() {
+            @Override
+            public void onImage(CameraKitView cameraKitView, final byte[] photo) {
+                mBitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
+                System.out.println("Saved image");
+                picture = photo;
+            }
+        });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                detectAndFrame(mBitmap);
+            }
+        }, 5000);
+    }
+
+    public void Sadness(View view){
+        chosenEmotion = "Sadness";
+        cameraKitView.captureImage(new CameraKitView.ImageCallback() {
+            @Override
+            public void onImage(CameraKitView cameraKitView, final byte[] photo) {
+                mBitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
+                System.out.println("Saved image");
+                picture = photo;
+            }
+        });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                detectAndFrame(mBitmap);
+            }
+        }, 5000);
+    }
+
     private void detectAndFrame(final Bitmap imageBitmap) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
