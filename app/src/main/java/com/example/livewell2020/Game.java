@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.camerakit.CameraKitView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.microsoft.projectoxford.face.FaceServiceClient;
 import com.microsoft.projectoxford.face.FaceServiceRestClient;
 import com.microsoft.projectoxford.face.contract.Face;
@@ -49,7 +50,7 @@ public class Game extends AppCompatActivity{
     private ProgressBar progressBar;
 
     private Bitmap mBitmap;
-    private byte[] picture;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class Game extends AppCompatActivity{
 
         cameraKitView = findViewById(R.id.camera);
         progressBar = findViewById(R.id.gameProgressBar);
+        mAuth = FirebaseAuth.getInstance();
 
         BottomNavigationView bnav = findViewById(R.id.bottom_nav_bar);
         bnav.setSelectedItemId(R.id.game);
@@ -69,9 +71,7 @@ public class Game extends AppCompatActivity{
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(),
-                                Settings.class));
-                        overridePendingTransition(0,0);
+                        LogOut();
                         return true;
                     case R.id.music:
                         startActivity(new Intent(getApplicationContext(),
@@ -85,6 +85,12 @@ public class Game extends AppCompatActivity{
             }
         });
 
+    }
+
+    private void LogOut() {
+        mAuth.getInstance().signOut();
+        finish();
+        startActivity(new Intent(this, Splash.class));
     }
 
     @Override
@@ -125,7 +131,6 @@ public class Game extends AppCompatActivity{
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
                 mBitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
                 System.out.println("Saved image");
-                picture = photo;
             }
         });
         new Handler().postDelayed(new Runnable() {
@@ -144,7 +149,6 @@ public class Game extends AppCompatActivity{
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
                 mBitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
                 System.out.println("Saved image");
-                picture = photo;
             }
         });
         new Handler().postDelayed(new Runnable() {
@@ -163,7 +167,6 @@ public class Game extends AppCompatActivity{
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
                 mBitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
                 System.out.println("Saved image");
-                picture = photo;
             }
         });
         new Handler().postDelayed(new Runnable() {
@@ -182,7 +185,6 @@ public class Game extends AppCompatActivity{
             public void onImage(CameraKitView cameraKitView, final byte[] photo) {
                 mBitmap = BitmapFactory.decodeByteArray(photo, 0, photo.length);
                 System.out.println("Saved image");
-                picture = photo;
             }
         });
         new Handler().postDelayed(new Runnable() {
