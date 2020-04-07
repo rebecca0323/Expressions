@@ -2,11 +2,13 @@ package com.example.livewell2020;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +21,7 @@ public class Song extends AppCompatActivity {
     private Runnable runnable;
     private Handler handler;
     private TextView songname;
+    private VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,22 @@ public class Song extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String name = bundle.getString("Name");
+
+        videoView = findViewById(R.id.imageView14);
+
+        String url = "https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/screen.mp4?alt=media&token=1b23660f-fe9f-4cd4-aaa2-f51ca87c3a35";
+        Uri uri = Uri.parse(url);
+
+        //Video Loop
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                videoView.start();
+            }
+        });
+
+        videoView.setVideoURI(uri);
+        videoView.requestFocus();
+        videoView.start();
 
         songname.setText(name);
 

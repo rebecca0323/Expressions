@@ -15,6 +15,7 @@
         tools:layout_editor_absoluteY="393dp"
         android:layout_centerHorizontal="true"
         android:scaleType="fitXY"/>
+
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
@@ -23,14 +24,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"/>
 
-    <ImageView
+    <VideoView
         android:id="@+id/imageView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/sk"
+        android:layout_width="220dp"
+        android:layout_height="340dp"
         android:layout_centerHorizontal="true"
         android:layout_alignTop="@id/imageView12"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="75dp"/>
 
     <TextView
         android:id="@+id/song_name"
