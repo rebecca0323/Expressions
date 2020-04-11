@@ -63,4 +63,16 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:onClick="pause"/>
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/play_but"
+        android:layout_alignTop="@id/song_progress"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="pause"/>
+
 </RelativeLayout>

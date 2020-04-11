@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -22,6 +23,7 @@ public class Song extends AppCompatActivity {
     private Handler handler;
     private TextView songname;
     private VideoView videoView;
+    private ImageView pause, play;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class Song extends AppCompatActivity {
 
         songname = findViewById(R.id.song_name);
         seekbar = findViewById(R.id.song_progress);
+        pause = findViewById(R.id.pause);
+        play = findViewById(R.id.play);
+
         handler = new Handler();
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -98,9 +103,13 @@ public class Song extends AppCompatActivity {
         if(!mediaPlayer.isPlaying()){
             mediaPlayer.start();
             changeSeekbar();
+            pause.setVisibility(View.VISIBLE);
+            play.setVisibility(View.INVISIBLE);
         }
         else{
             mediaPlayer.pause();
+            pause.setVisibility(View.INVISIBLE);
+            play.setVisibility(View.VISIBLE);
         }
     }
 
