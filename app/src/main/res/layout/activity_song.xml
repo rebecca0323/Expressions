@@ -75,4 +75,22 @@
         android:layout_centerHorizontal="true"
         android:onClick="pause"/>
 
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/song_progress"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="240dp"
+        app:srcCompat="@drawable/ic_skip_next_black_24dp" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/song_progress"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="145dp"
+        app:srcCompat="@drawable/ic_skip_previous_black_24dp" />
+
 </RelativeLayout>
