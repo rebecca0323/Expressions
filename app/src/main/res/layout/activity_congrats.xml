@@ -3,14 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#A7B0FF"
     android:layout_height="match_parent"
     tools:context=".Congrats">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/congrats"
+        android:id="@+id/rel" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         app:lottie_fileName="congratsani.json"
         app:lottie_autoPlay="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gotit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480dp"/>
 
 </RelativeLayout>
