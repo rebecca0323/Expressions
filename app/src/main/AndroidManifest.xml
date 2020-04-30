@@ -14,8 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".Statistics">
-        </activity>
+        <activity android:name=".Congrats"></activity>
+        <activity android:name=".Statistics"></activity>
         <activity android:name=".Incorrect" />
         <activity android:name=".Correct" />
 
@@ -24,10 +24,10 @@
             android:required="false" />
 
         <activity android:name=".Camera" />
-        <activity android:name=".Game"></activity>
+        <activity android:name=".Game" />
         <activity android:name=".Instructions" />
-        <activity android:name=".Song"></activity>
-        <activity android:name=".Playlist"></activity>
+        <activity android:name=".Song" />
+        <activity android:name=".Playlist" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".Splash">
