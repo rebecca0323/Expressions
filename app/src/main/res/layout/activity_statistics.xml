@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/stats"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="30dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,16 +84,15 @@
     </LinearLayout>
 
     <HorizontalScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearlayout">
-
+        android:layout_below="@id/linearlayout"
+        android:paddingTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,7 +103,8 @@
                 android:text="200"
                 android:textAlignment="center"
                 android:textColor="#34475A"
-                android:textSize="40sp" />
+                android:textSize="40sp"
+                android:scrollHorizontally="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,14 +115,17 @@
                 android:text="100%"
                 android:textAlignment="center"
                 android:textColor="#34475A"
-                android:textSize="40sp" />
+                android:textSize="40sp"
+                android:scrollHorizontally="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/minuteslistened"
                 android:paddingTop="75dp"
+                android:scrollHorizontally="true"
                 android:text="30"
                 android:textAlignment="center"
                 android:textColor="#34475A"
@@ -130,8 +133,6 @@
 
 
         </LinearLayout>
-
-
     </HorizontalScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
