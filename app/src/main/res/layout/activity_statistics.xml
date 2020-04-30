@@ -36,6 +36,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/first"
                 android:layout_height="wrap_content"
                 android:background="@drawable/first"
                 android:paddingTop="20dp"
@@ -46,6 +47,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/second"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
                 android:background="@drawable/second"
@@ -58,6 +60,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/third"
                 android:layout_marginTop="13dp"
                 android:background="@drawable/third"
                 android:paddingTop="20dp"
@@ -71,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
                 android:background="@drawable/fourth"
+                android:id="@+id/fourth"
                 android:paddingTop="20dp"
                 android:text="Fourth"
                 android:textAlignment="center"
@@ -99,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:background="@drawable/totalanswers"
+                android:id="@+id/total"
                 android:paddingTop="75dp"
                 android:text="200"
                 android:textAlignment="center"
@@ -109,6 +114,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/correct"
                 android:layout_marginLeft="30dp"
                 android:background="@drawable/correctanswers"
                 android:paddingTop="75dp"
@@ -121,6 +127,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/minutes"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/minuteslistened"

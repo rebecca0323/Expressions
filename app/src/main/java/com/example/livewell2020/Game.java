@@ -69,7 +69,9 @@ public class Game extends AppCompatActivity{
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.settings:
-                        LogOut();
+                        startActivity(new Intent(getApplicationContext(),
+                                Statistics.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.music:
                         startActivity(new Intent(getApplicationContext(),

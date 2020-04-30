@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/settings"
-        android:icon="@drawable/leave_icon"
-        android:title="Log out" />
+        android:icon="@drawable/stats_icon"
+        android:title="Statistics" />
 
     <item
         android:id="@+id/music"

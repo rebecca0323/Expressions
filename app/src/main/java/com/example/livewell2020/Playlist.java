@@ -28,7 +28,9 @@ public class Playlist extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.settings:
-                        LogOut();
+                        startActivity(new Intent(getApplicationContext(),
+                                Statistics.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.game:
                         startActivity(new Intent(getApplicationContext(),
