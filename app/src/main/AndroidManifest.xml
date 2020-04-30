@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <activity android:name=".Level2"></activity>
         <activity android:name=".Congrats">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Statistics"></activity>
+        <activity android:name=".Statistics" />
         <activity android:name=".Incorrect" />
         <activity android:name=".Correct" />
 
@@ -36,8 +37,7 @@
         <activity android:name=".Playlist" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".Splash">
-        </activity>
+        <activity android:name=".Splash"></activity>
     </application>
 
 </manifest>

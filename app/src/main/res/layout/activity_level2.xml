@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Level2">
+
+    <com.camerakit.CameraKitView
+        android:id="@+id/camera2"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:adjustViewBounds="true"
+        android:keepScreenOn="true"
+        app:camera_flash="auto"
+        app:camera_facing="back"
+        app:camera_focus="continuous"
+        app:camera_permissions="camera" >
+    </com.camerakit.CameraKitView>
+
+    <ProgressBar
+        android:id="@+id/gameProgressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/topbuttons2"
+        android:layout_below="@+id/camera2"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Contempt"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/contempt"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:onClick="Disgust"
+            android:layout_height="wrap_content"
+            android:background="@drawable/disgust"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/bottombuttons"
+        android:layout_below="@+id/topbuttons2"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Fear"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/fear"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:onClick="Neutral"
+            android:layout_height="wrap_content"
+            android:background="@drawable/neutral"/>
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_bar"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"/>
+
+
+</RelativeLayout>
