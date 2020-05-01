@@ -1,4 +1,4 @@
-package com.example.livewell2020;
+package com.example.expressions;
 
 public class Emotion {
     private double probability;

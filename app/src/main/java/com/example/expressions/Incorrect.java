@@ -1,36 +1,40 @@
-package com.example.livewell2020;
+package com.example.expressions;
 
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Congrats extends AppCompatActivity {
+public class Incorrect extends AppCompatActivity {
 
+    private TextView answer;
     private SoundPool soundPool;
-    int sound;
+    private int sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_congrats);
+        setContentView(R.layout.activity_incorrect);
+
+        Intent intent = getIntent();
+        String correct = intent.getStringExtra("Answer");
+        answer = findViewById(R.id.answer);
+        answer.setText(correct);
 
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
                 .build();
         soundPool = new SoundPool.Builder()
                 .setMaxStreams(6)
                 .setAudioAttributes(audioAttributes)
                 .build();
-        playSound();
-    }
 
-    private void playSound() {
-        sound = soundPool.load(this, R.raw.congrats, 1);
+        sound = soundPool.load(this, R.raw.incorrect, 1);
 
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
@@ -40,8 +44,8 @@ public class Congrats extends AppCompatActivity {
         });
     }
 
-    public void Level2(View view){
-        Intent intent = new Intent(this, Level2.class);
+    public void IncorrectNext(View view){
+        Intent intent = new Intent(this, Game.class);
         startActivity(intent);
     }
 }

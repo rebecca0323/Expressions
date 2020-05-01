@@ -1,4 +1,4 @@
-package com.example.livewell2020;
+package com.example.expressions;
 
 import android.content.Intent;
 import android.media.AudioAttributes;
@@ -35,8 +35,8 @@ public class Instructions extends AppCompatActivity {
         mSlideViewPager.addOnPageChangeListener(viewListener);
 
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
                 .build();
         soundPool = new SoundPool.Builder()
                 .setMaxStreams(6)

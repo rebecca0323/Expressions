@@ -1,4 +1,4 @@
-package com.example.livewell2020;
+package com.example.expressions;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,7 +54,7 @@ public class Statistics extends AppCompatActivity {
                         return true;
                     case R.id.game:
                         startActivity(new Intent(getApplicationContext(),
-                                Game.class));
+                                Congrats.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.music:

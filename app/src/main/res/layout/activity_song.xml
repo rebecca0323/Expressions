@@ -81,7 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/song_progress"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="220dp"
+        android:layout_alignLeft="@+id/pause"
+        android:paddingLeft="100dp"
         app:srcCompat="@drawable/ic_skip_next_black_24dp" />
 
     <ImageView
@@ -90,7 +91,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/song_progress"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="115dp"
+        android:layout_alignRight="@id/pause"
+        android:paddingRight="100dp"
         app:srcCompat="@drawable/ic_skip_previous_black_24dp" />
 
 </RelativeLayout>

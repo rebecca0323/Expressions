@@ -1,4 +1,4 @@
-package com.example.livewell2020;
+package com.example.expressions;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -51,6 +53,9 @@ public class Game extends AppCompatActivity{
 
     private Bitmap mBitmap;
 
+    private SoundPool soundPool;
+    int sound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +89,15 @@ public class Game extends AppCompatActivity{
                 return false;
             }
         });
+
+        AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .build();
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(6)
+                .setAudioAttributes(audioAttributes)
+                .build();
 
     }
 
@@ -124,6 +138,16 @@ public class Game extends AppCompatActivity{
     }
 
     public void Joy(View view){
+
+        sound = soundPool.load(this, R.raw.joy, 1);
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(sound, 1, 1, 0, 0, 1);
+            }
+        });
+
         chosenEmotion = "Joy";
         progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
@@ -142,6 +166,16 @@ public class Game extends AppCompatActivity{
     }
 
     public void Surprise(View view){
+
+        sound = soundPool.load(this, R.raw.surprise, 1);
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(sound, 1, 1, 0, 0, 1);
+            }
+        });
+
         chosenEmotion = "Surprise";
         progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
@@ -160,6 +194,16 @@ public class Game extends AppCompatActivity{
     }
 
     public void Anger(View view){
+
+        sound = soundPool.load(this, R.raw.anger, 1);
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(sound, 1, 1, 0, 0, 1);
+            }
+        });
+
         chosenEmotion = "Anger";
         progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
@@ -178,6 +222,16 @@ public class Game extends AppCompatActivity{
     }
 
     public void Sadness(View view){
+
+        sound = soundPool.load(this, R.raw.sadness, 1);
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(sound, 1, 1, 0, 0, 1);
+            }
+        });
+
         chosenEmotion = "Sadness";
         progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
