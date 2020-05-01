@@ -13,6 +13,7 @@ public class Incorrect extends AppCompatActivity {
 
     private TextView answer;
     private SoundPool soundPool;
+    private int sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,14 @@ public class Incorrect extends AppCompatActivity {
                 .setAudioAttributes(audioAttributes)
                 .build();
 
-        int sound = soundPool.load(this, R.raw.incorrect, 1);
-        soundPool.play(sound, 1, 1, 0, 0, 1);
+        sound = soundPool.load(this, R.raw.incorrect, 1);
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(sound, 1, 1, 0, 0, 1);
+            }
+        });
     }
 
     public void IncorrectNext(View view){

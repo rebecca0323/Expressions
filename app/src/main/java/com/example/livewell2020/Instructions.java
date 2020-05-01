@@ -1,6 +1,8 @@
 package com.example.livewell2020;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,6 +18,9 @@ public class Instructions extends AppCompatActivity {
 
     private int mCurrentPage;
 
+    private SoundPool soundPool;
+    int sound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,24 @@ public class Instructions extends AppCompatActivity {
 
         mSlideViewPager.setAdapter(slideAdapter);
         mSlideViewPager.addOnPageChangeListener(viewListener);
+
+        AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(6)
+                .setAudioAttributes(audioAttributes)
+                .build();
+
+        sound = soundPool.load(getApplicationContext(), R.raw.step1, 1);
+
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(sound, 1, 1, 0, 0, 1);
+            }
+        });
     }
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
@@ -42,9 +65,36 @@ public class Instructions extends AppCompatActivity {
 
             if(mCurrentPage == 2){
                 finish.setVisibility(View.VISIBLE);
+
+                sound = soundPool.load(getApplicationContext(), R.raw.step3, 1);
+
+                soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+                    @Override
+                    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                        soundPool.play(sound, 1, 1, 0, 0, 1);
+                    }
+                });
+            }
+            else if(mCurrentPage == 0){
+                sound = soundPool.load(getApplicationContext(), R.raw.step1, 1);
+
+                soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+                    @Override
+                    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                        soundPool.play(sound, 1, 1, 0, 0, 1);
+                    }
+                });
             }
             else{
                 finish.setVisibility(View.INVISIBLE);
+                sound = soundPool.load(getApplicationContext(), R.raw.step2, 1);
+
+                soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+                    @Override
+                    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                        soundPool.play(sound, 1, 1, 0, 0, 1);
+                    }
+                });
             }
         }
 
