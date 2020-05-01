@@ -63,6 +63,12 @@ public class Song extends AppCompatActivity {
             if(name.equals("Zen")){
                 mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/bensound-relaxing.mp3?alt=media&token=54a3197f-8695-4e96-8d57-57a121659e42");
             }
+            else if(name.equals("Peace")){
+                mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/peace.mp3?alt=media&token=748e5408-2156-4d55-8ba5-c7281c0b4f25");
+            }
+            else if(name.equals("Serenity")){
+                mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/serenity.mp3?alt=media&token=e4158ce7-46a5-4f35-a376-f5ed62559fb2");
+            }
             else{
                 mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/meditation.mp3?alt=media&token=f17388bc-f2f9-40c5-8883-65089ba52080");
             }

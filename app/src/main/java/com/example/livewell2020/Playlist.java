@@ -60,6 +60,24 @@ public class Playlist extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void peace(View view){
+        Intent intent = new Intent(this, Song.class);
+        Bundle bundle = new Bundle();
+        String songName = "Peace";
+        bundle.putString("Name", songName);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void serenity(View view){
+        Intent intent = new Intent(this, Song.class);
+        Bundle bundle = new Bundle();
+        String songName = "Serenity";
+        bundle.putString("Name", songName);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
     public void meditate(View view){
         Intent intent = new Intent(this, Song.class);
         Bundle bundle = new Bundle();

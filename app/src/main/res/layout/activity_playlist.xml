@@ -56,12 +56,37 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingRight="30dp">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="220.5dp"
+                    android:background="@drawable/peace"
+                    android:onClick="peace" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="30dp">
                 <ImageView
                     android:layout_width="200dp"
                     android:layout_height="220.5dp"
                     android:background="@drawable/meditate"
                     android:onClick="meditate"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="30dp">
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="220.5dp"
+                    android:background="@drawable/serenity"
+                    android:onClick="serenity"/>
             </LinearLayout>
 
 
