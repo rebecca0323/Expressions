@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -106,5 +107,16 @@ public class Statistics extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(mAuth.getCurrentUser() == null){
+            finish();
+            Toast.makeText(this, "You are not signed in!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Splash.class));
+        }
     }
 }

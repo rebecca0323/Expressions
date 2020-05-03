@@ -15,12 +15,14 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.camerakit.CameraKitView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.microsoft.projectoxford.face.FaceServiceClient;
 import com.microsoft.projectoxford.face.FaceServiceRestClient;
 import com.microsoft.projectoxford.face.contract.Face;
@@ -55,6 +57,8 @@ public class Level2 extends AppCompatActivity {
     private SoundPool soundPool;
     int sound;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,8 @@ public class Level2 extends AppCompatActivity {
         bnav.setSelectedItemId(R.id.game);
 
         detectionProgressDialog = new ProgressDialog(this);
+
+        mAuth = FirebaseAuth.getInstance();
 
         bnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -103,6 +109,12 @@ public class Level2 extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         cameraKitView.onStart();
+        
+        if(mAuth.getCurrentUser() == null){
+            finish();
+            Toast.makeText(this, "You are not signed in!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Splash.class));
+        }
     }
 
     @Override
@@ -168,7 +180,7 @@ public class Level2 extends AppCompatActivity {
             }
         });
 
-        chosenEmotion = "Joy";
+        chosenEmotion = "Disgust";
         progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
             @Override
@@ -196,7 +208,7 @@ public class Level2 extends AppCompatActivity {
             }
         });
 
-        chosenEmotion = "Joy";
+        chosenEmotion = "Fear";
         progressBar.setVisibility(View.VISIBLE);
         cameraKitView.captureImage(new CameraKitView.ImageCallback() {
             @Override

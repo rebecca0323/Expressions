@@ -9,9 +9,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 
@@ -24,6 +27,7 @@ public class Song extends AppCompatActivity {
     private TextView songname;
     private VideoView videoView;
     private ImageView pause, play;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,8 @@ public class Song extends AppCompatActivity {
         String name = bundle.getString("Name");
 
         videoView = findViewById(R.id.imageView14);
+
+        mAuth = FirebaseAuth.getInstance();
 
         String url = "https://firebasestorage.googleapis.com/v0/b/livewell2020-10b52.appspot.com/o/screen.mp4?alt=media&token=1b23660f-fe9f-4cd4-aaa2-f51ca87c3a35";
         Uri uri = Uri.parse(url);
@@ -127,6 +133,17 @@ public class Song extends AppCompatActivity {
             mediaPlayer.reset();
             mediaPlayer.release();
             mediaPlayer = null;
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(mAuth.getCurrentUser() == null){
+            finish();
+            Toast.makeText(this, "You are not signed in!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Splash.class));
         }
     }
 }

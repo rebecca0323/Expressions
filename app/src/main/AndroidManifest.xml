@@ -14,13 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name="com.example.expressions.Level2"></activity>
+        <activity android:name="com.example.expressions.Level2">
+        </activity>
         <activity android:name="com.example.expressions.Congrats">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.example.expressions.Statistics" />
         <activity android:name="com.example.expressions.Incorrect" />
@@ -38,6 +35,11 @@
         <activity android:name="com.example.expressions.Register" />
         <activity android:name="com.example.expressions.Login" />
         <activity android:name="com.example.expressions.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

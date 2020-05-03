@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Playlist extends AppCompatActivity {
 
     private BottomNavigationView bnav;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,8 @@ public class Playlist extends AppCompatActivity {
 
         bnav = findViewById(R.id.bottom_nav_bar);
         bnav.setSelectedItemId(R.id.music);
+
+        mAuth = FirebaseAuth.getInstance();
 
         bnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -43,12 +47,6 @@ public class Playlist extends AppCompatActivity {
                 return false;
             }
         });
-    }
-
-    private void LogOut() {
-        FirebaseAuth.getInstance().signOut();
-        finish();
-        startActivity(new Intent(this, Splash.class));
     }
 
     public void zen(View view){
@@ -85,5 +83,16 @@ public class Playlist extends AppCompatActivity {
         bundle.putString("Name", songName);
         intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(mAuth.getCurrentUser() == null){
+            finish();
+            Toast.makeText(this, "You are not signed in!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Splash.class));
+        }
     }
 }

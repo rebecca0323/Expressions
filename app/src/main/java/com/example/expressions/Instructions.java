@@ -6,9 +6,12 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Instructions extends AppCompatActivity {
 
@@ -20,6 +23,8 @@ public class Instructions extends AppCompatActivity {
 
     private SoundPool soundPool;
     int sound;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,8 @@ public class Instructions extends AppCompatActivity {
 
         mSlideViewPager.setAdapter(slideAdapter);
         mSlideViewPager.addOnPageChangeListener(viewListener);
+
+        mAuth = FirebaseAuth.getInstance();
 
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
@@ -107,5 +114,16 @@ public class Instructions extends AppCompatActivity {
     public void playGame(View view){
         Intent intent = new Intent(this, Game.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(mAuth.getCurrentUser() == null){
+            finish();
+            Toast.makeText(this, "You are not signed in!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Splash.class));
+        }
     }
 }
