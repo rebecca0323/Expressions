@@ -14,27 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name="com.example.expressions.Level2">
-        </activity>
-        <activity android:name="com.example.expressions.Congrats">
-
-        </activity>
-        <activity android:name="com.example.expressions.Statistics" />
-        <activity android:name="com.example.expressions.Incorrect" />
-        <activity android:name="com.example.expressions.Correct" />
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".Level2"></activity>
+        <activity android:name=".Congrats"></activity>
+        <activity android:name=".Statistics" />
+        <activity android:name=".Incorrect" />
+        <activity android:name=".Correct" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name="com.example.expressions.Camera" />
-        <activity android:name="com.example.expressions.Game" />
-        <activity android:name="com.example.expressions.Instructions" />
-        <activity android:name="com.example.expressions.Song" />
-        <activity android:name="com.example.expressions.Playlist" />
-        <activity android:name="com.example.expressions.Register" />
-        <activity android:name="com.example.expressions.Login" />
-        <activity android:name="com.example.expressions.Splash">
+        <activity android:name=".Camera" />
+        <activity android:name=".Game" />
+        <activity android:name=".Instructions" />
+        <activity android:name=".Song" />
+        <activity android:name=".Playlist" />
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
