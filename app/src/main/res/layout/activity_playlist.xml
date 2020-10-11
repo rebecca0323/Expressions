@@ -17,13 +17,14 @@
         app:itemTextColor="@drawable/selector"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:id="@+id/dehaze"
-        app:srcCompat="@drawable/dehaze"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/settings_other"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentLeft="true"
+        android:onClick="toSettings"
         />
 
     <ImageView

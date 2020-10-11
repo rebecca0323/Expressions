@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name = "mySwitch">
+        <item name = "android:colorControlActivated">#FF8D8D</item>
+    </style>
+
 </resources>

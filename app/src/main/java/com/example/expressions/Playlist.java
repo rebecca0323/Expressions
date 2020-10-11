@@ -85,6 +85,11 @@ public class Playlist extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toSettings(View view){
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onStart() {
         super.onStart();

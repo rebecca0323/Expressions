@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                />
+                android:theme="@style/mySwitch"/>
 
         </LinearLayout>
 
@@ -48,7 +48,8 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/statistics_txt"
             android:layout_marginLeft="30dp"
-            android:id="@+id/stats_but"/>
+            android:id="@+id/stats_but"
+            android:onClick="toStatistics"/>/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -56,7 +57,8 @@
             app:srcCompat="@drawable/music_txt"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
-            android:id="@+id/music_but"/>
+            android:id="@+id/music_but"
+            android:onClick="toMusic"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -64,7 +66,8 @@
             app:srcCompat="@drawable/game_txt"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
-            android:id="@+id/game_but"/>
+            android:id="@+id/game_but"
+            android:onClick="toGame"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -72,7 +75,7 @@
             app:srcCompat="@drawable/logout_txt"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
-            android:id="@+id/logout_but"/>
+            android:id="@+id/logout_but" />
 
     </LinearLayout>
 
