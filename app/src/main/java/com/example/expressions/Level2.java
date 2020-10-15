@@ -42,10 +42,11 @@ public class Level2 extends AppCompatActivity {
     private String chosenEmotion;
     private ArrayList<Emotion> emotions = new ArrayList<>();
     private CameraKitView cameraKitView;
+
     // Add your Face endpoint to your environment variables.
-    private final String apiEndpoint = "https://eastus.api.cognitive.microsoft.com/face/v1.0";
+    private final String apiEndpoint = "https://rebecca.cognitiveservices.azure.com/face/v1.0";
     // Add your Face subscription key to your environment variables.
-    private final String subscriptionKey = "c09bae2d6b424719b205d93ec4e1e043";
+    private final String subscriptionKey = "f6eb96c45c274fad836a40a50dbcc300";
     private final FaceServiceClient faceServiceClient =
             new FaceServiceRestClient(apiEndpoint, subscriptionKey);
 
